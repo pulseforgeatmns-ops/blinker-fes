@@ -3,93 +3,93 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Blinker - Car Subscription</title>
+    <title>Filmist - Discover Your Next Favorite Film</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
     <nav>
-  <div class="nav-container">
-    <div class="logo">
-      <svg width="32" height="32" viewBox="0 0 40 40" fill="none">
-        <path d="M8 20L20 8L32 20" fill="#6c2bd9"/>
-        <path d="M8 20L20 32L32 20" fill="#ec4899"/>
-        <path d="M8 20L20 14L32 20L20 26Z" fill="#06b6d4"/>
-      </svg>
-      <span>blinker</span>
-    </div>
-    <ul class="nav-links">
-      <li><a href="#">Home</a></li>
-      <li><a href="#">Find Your Car</a></li>
-      <li><a class="btn-contact" href="#">Contact</a></li>
-    </ul>
-  </div>
-</nav>
+      <div class="nav-container">
+        <div class="logo">
+          <svg width="32" height="32" viewBox="0 0 40 40" fill="none">
+            <path d="M8 20L20 8L32 20" fill="#6c2bd9"/>
+            <path d="M8 20L20 32L32 20" fill="#ec4899"/>
+            <path d="M8 20L20 14L32 20L20 26Z" fill="#06b6d4"/>
+          </svg>
+          <span>filmist</span>
+        </div>
+        <ul class="nav-links">
+          <li><a href="#">Home</a></li>
+          <li><a href="#">Browse</a></li>
+          <li><a class="btn-contact" href="#">Sign In</a></li>
+        </ul>
+      </div>
+    </nav>
 
     <main>
-        <section class="hero">
-  <h1>Australia's most awarded car subscription platform</h1>
-  <p class="hero-sub">FIND YOUR DREAM CAR WITH <span>BLINKER</span></p>
-  <div class="search-bar">
-    <input type="text" placeholder="Search by Model, Make or Keyword" />
-    <button>🔍</button>
-  </div>
-</section>
-<section class="browse-hero">
-  <div class="browse-hero-content">
-    <h2>Browse our cars</h2>
-  </div>
-</section>
-  <section class="cars-section">
-    <div class="cars-container">
-        <div class="cars-header">
-            <h2>Available Cars</h2>
+      <section class="hero">
+        <h1>The world's greatest films, curated for you</h1>
+        <p class="hero-sub">DISCOVER YOUR NEXT FAVORITE WITH <span>FILMIST</span></p>
+        <div class="search-bar">
+          <input type="text" placeholder="Search by title, genre or keyword" />
+          <button>🔍</button>
         </div>
-        <div class="sort-bar">
-  <label for="sort">Sort by:</label>
-  <select id="sort">
-    <option value="default">Featured</option>
-    <option value="name-asc">Alphabetical A → Z</option>
-    <option value="name-desc">Alphabetical Z → A</option>
-    <option value="year-desc">Newest to Oldest</option>
-    <option value="year-asc">Oldest to Newest</option>
-  </select>
-</div>
-        <div class="cars-grid" id="cars-grid">
+      </section>
 
+      <section class="browse-hero">
+        <div class="browse-hero-content">
+          <h2>Browse our collection</h2>
         </div>
-    </div>
-  </section>
+      </section>
+
+      <section class="cars-section">
+        <div class="cars-container">
+          <div class="cars-header">
+            <h2>Featured Films</h2>
+          </div>
+          <div class="sort-bar">
+            <label for="sort">Sort by:</label>
+            <select id="sort">
+              <option value="default">Featured</option>
+              <option value="name-asc">Title A → Z</option>
+              <option value="name-desc">Title Z → A</option>
+              <option value="year-desc">Newest to Oldest</option>
+              <option value="year-asc">Oldest to Newest</option>
+            </select>
+          </div>
+          <div class="cars-grid" id="cars-grid"></div>
+        </div>
+      </section>
     </main>
 
-   <footer>
-  <div class="footer-container">
-    <div class="footer-brand">
-      <p class="footer-logo">blinker</p>
-      <p>Australia's leading car subscription platform.</p>
-    </div>
-    <div class="footer-col">
-      <h4>Platform</h4>
-      <ul>
-        <li><a href="#">Browse Cars</a></li>
-        <li><a href="#">How it Works</a></li>
-        <li><a href="#">Pricing</a></li>
-      </ul>
-    </div>
-    <div class="footer-col">
-      <h4>Company</h4>
-      <ul>
-        <li><a href="#">About</a></li>
-        <li><a href="#">Careers</a></li>
-        <li><a href="#">Contact</a></li>
-      </ul>
-    </div>
-  </div>
-  <div class="footer-bottom">
-    <p>© 2024 Blinker Pty Ltd. All rights reserved.</p>
+    <footer>
+      <div class="footer-container">
+        <div class="footer-brand">
+          <p class="footer-logo">filmist</p>
+          <p>Your guide to the greatest films ever made. Curated, ranked, and ready to discover.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Browse</h4>
+          <ul>
+            <li><a href="#">New Releases</a></li>
+            <li><a href="#">Top Rated</a></li>
+            <li><a href="#">By Genre</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Company</h4>
+          <ul>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Careers</a></li>
+            <li><a href="#">Contact</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2024 Filmist. All rights reserved.</p>
+      </div>
+    </footer>
 
-  </div>
-</footer>
     <script src="script.js"></script>
 </body>
 </html>

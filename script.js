@@ -1,45 +1,50 @@
-const cars = [
-  { name: "Tesla Model 3", category: "Electric Sedan", year: 2024, price: 249, seats: 5, trans: "Auto", fuel: "Electric" },
-  { name: "Toyota RAV4", category: "SUV", year: 2023, price: 189, seats: 5, trans: "Auto", fuel: "Petrol" },
-  { name: "BMW 3 Series", category: "Luxury Sedan", year: 2024, price: 319, seats: 5, trans: "Auto", fuel: "Petrol" },
-  { name: "Hyundai Tucson", category: "SUV", year: 2022, price: 159, seats: 5, trans: "Auto", fuel: "Petrol" },
-  { name: "Audi Q5", category: "Luxury SUV", year: 2023, price: 359, seats: 5, trans: "Auto", fuel: "Diesel" },
-  { name: "Ford Ranger", category: "Ute", year: 2022, price: 199, seats: 5, trans: "Auto", fuel: "Diesel" },
-]
+const apiKey = '3ddca7f6'
+const searchTerm = 'marvel'
 
-function renderCars(list) {
+let allMovies = []
+
+fetch(`https://www.omdbapi.com/?s=${searchTerm}&apikey=${apiKey}`)
+  .then(response => response.json())
+  .then(data => {
+    allMovies = data.Search.slice(0, 6)
+    renderMovies(allMovies)
+  })
+
+function renderMovies(list) {
   const grid = document.getElementById('cars-grid')
-  grid.innerHTML = list.map(car => `
+
+  grid.innerHTML = list.map(movie => `
     <div class="car-card">
-      <div class="car-img">🚗</div>
+      <div class="car-img">
+       ${movie.Poster !== 'N/A' 
+  ? `<img src="${movie.Poster}" alt="${movie.Title}" style="width:100%; height:100%; object-fit:cover;" />`
+  : `<div style="display:flex;align-items:center;justify-content:center;height:100%;font-size:48px;">🎬</div>`
+}
+      </div>
       <div class="car-info">
-        <span class="car-category">${car.category}</span>
-        <span class="car-year">${car.year}</span>
-        <h3>${car.name}</h3>
-        <p>👥 ${car.seats} Seats &nbsp; ⚙️ ${car.trans} &nbsp; ⛽ ${car.fuel}</p>
-        <hr />
+        <span class="car-category">${movie.Type}</span>
+        <span class="car-year">${movie.Year}</span>
+        <h3>${movie.Title}</h3>
         <div class="card-footer">
           <div>
-            <small>FROM</small>
-            <strong>$${car.price}/wk</strong>
+            <small>IMDB ID</small>
+            <strong>${movie.imdbID}</strong>
           </div>
-          <button>Subscribe</button>
+          <button>View</button>
         </div>
       </div>
     </div>
   `).join('')
 }
 
-renderCars(cars)
-
 document.getElementById('sort').addEventListener('change', function() {
   const value = this.value
-  let sorted = [...cars]
+  let sorted = [...allMovies]
 
-  if (value === 'name-asc') sorted.sort((a, b) => a.name.localeCompare(b.name))
-  if (value === 'name-desc') sorted.sort((a, b) => b.name.localeCompare(a.name))
-  if (value === 'year-desc') sorted.sort((a, b) => b.year - a.year)
-  if (value === 'year-asc') sorted.sort((a, b) => a.year - b.year)
+  if (value === 'name-asc') sorted.sort((a, b) => a.Title.localeCompare(b.Title))
+  if (value === 'name-desc') sorted.sort((a, b) => b.Title.localeCompare(a.Title))
+  if (value === 'year-desc') sorted.sort((a, b) => b.Year - a.Year)
+  if (value === 'year-asc') sorted.sort((a, b) => a.Year - b.Year)
 
-  renderCars(sorted)
+  renderMovies(sorted)
 })

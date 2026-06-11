@@ -307,7 +307,7 @@ footer {
 }
 
 .browse-hero {
-  background-image: url('https://images.unsplash.com/photo-1506521781263-d8422e82f27a?w=1400&q=80');
+background-image: url('https://images.unsplash.com/photo-1485846234645-a62644f84728?w=1400&q=80');
   background-size: cover;
   background-position: center;
   position: relative;
@@ -331,4 +331,41 @@ footer {
   font-size: 42px;
   font-weight: 700;
   color: white;
+}
+
+/* Tablet — 2 columns */
+@media (max-width: 900px) {
+  .cars-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .footer-container {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+/* Phone — 1 column */
+@media (max-width: 600px) {
+  .cars-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .footer-container {
+    grid-template-columns: 1fr;
+  }
+
+  .hero h1 {
+    font-size: 32px;
+  }
+
+  .search-bar {
+    flex-direction: column;
+  }
+
+  .nav-container {
+    flex-direction: column;
+    height: auto;
+    padding: 16px 0;
+    gap: 16px;
+  }
 }
